@@ -1,12 +1,18 @@
-const cityName = document.getElementById("city-name");
-const input = document.getElementById("user-input");
-const weather = document.getElementById("weather");
-const icon = document.getElementById("icon");
-const curTemp = document.getElementById("temp-cur");
-const maxTemp = document.getElementById("temp-max");
-const minTemp = document.getElementById("temp-min");
+const countryName = document.getElementById('country-name');
+const input = document.getElementById('user-input');
+const flag = document.getElementById('flag');
+const activeCases = document.getElementById('active-cases');
+const totalCases = document.getElementById('total-cases');
+const todayCases = document.getElementById('today-cases');
+const totalDeath = document.getElementById('total-death');
+const todayDeath = document.getElementById('today-death');
+const totalRecovery = document.getElementById('total-recovery');
+const todayRecovery = document.getElementById('today-recovery');
+const criticalCases= document.getElementById('critical-cases');
+const totalTest = document.getElementById('total-test');
+// const = document.getElementById('');
 
-const loadWeatherData = () => {
+const loadCovidData = () => {
   const url = `https://corona.lmao.ninja/v2/countries/${input.value}`;
 
   fetch(url)
@@ -15,6 +21,7 @@ const loadWeatherData = () => {
 };
 
 const displayWeatherData = (data) => {
+  console.log(data);
   if (data.message == "city not found") {
     document.getElementById('error-message').style.display = 'block';
     document.getElementById('main-display').style.display = 'none';
@@ -22,18 +29,23 @@ const displayWeatherData = (data) => {
   } else {
     document.getElementById('error-message').style.display = 'none';
     document.getElementById('main-display').style.display = 'block';
-    cityName.innerText = `${data.name}, ${data.sys.country}`;
-    icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    weather.innerText = data.weather[0].main;
-    curTemp.innerText = `Current Temp: ${(data.main.temp - 273.15).toFixed(
-      2
-    )} °C`;
-    maxTemp.innerText = `Maximum Temp: ${(data.main.temp_max - 273.15).toFixed(
-      2
-    )} °C`;
-    minTemp.innerText = `Minimum Temp: ${(data.main.temp_min - 273.15).toFixed(
-      2
-    )} °C`;
+    countryName.innerText = data.country;
+    flag.src = data.countryInfo.flag;
+
+
+
+
+    activeCases.innerText = data.active;
+    totalCases.innerText = data.cases;
+    todayCases.innerText = data.todayCases;
+    totalDeath.innerText = data.deaths;
+    todayDeath.innerText = data.todayDeaths;
+    totalRecovery.innerText = data.recovered;
+    todayRecovery.innerText = data.todayRecovered;
+    criticalCases.innerText = data.critical;
+    totalTest.innerText = data.tests;
+
+
     input.value = "";
   }
 };

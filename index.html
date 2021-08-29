@@ -44,7 +44,7 @@
       <form class="col-md-6 m-auto py-5">
         <div class="input-group-lg mb-3 d-flex">
           <input
-            id="weather-input"
+            id="user-input"
             type="text"
             class="form-control"
             placeholder="Enter a location for Weather ..."
@@ -53,7 +53,7 @@
             <button
               type="button"
               class="btn btn-danger"
-              onclick="loadWeatherData()"
+              onclick="loadCovidData()"
             >
               Search
             </button>
@@ -64,55 +64,55 @@
         <h2 id="error-message">Please Enter A Valid Name!</h2>
         <div id="main-display">
           <header class="d-flex align-items-center justify-content-center mb-5">
-            <h2>Covid-19 Cases in <span id="country-name">Bangladesh</span></h2>
-            <img id="flag" src="images/Flag-Bangladesh.jpg" alt="" />
+            <h2>Covid-19 Cases in <span id="country-name"></span></h2>
+            <img id="flag" src="" alt="" />
           </header>
 
           <div class="card-section">
             <div class="card-item">
               <i class="fas fa-check-circle card-icon"></i>
               <h3 class="text-danger my-3">Active Cases</h3>
-              <h3 class="text-danger">5460</h3>
+              <h3 id="active-cases" class="text-danger">00</h3>
             </div>
             <div class="card-item">
               <i class="fas fa-search-plus card-icon"></i>
               <h3 class="text-danger my-3">Total Cases</h3>
-              <h3 class="text-danger">5460</h3>
+              <h3 id="total-cases" class="text-danger">00</h3>
             </div>
             <div class="card-item">
               <i class="fas fa-briefcase-medical card-icon"></i>
               <h3 class="text-danger my-3">Today's Cases</h3>
-              <h3 class="text-danger">5460</h3>
+              <h3 id="today-cases" class="text-danger">00</h3>
             </div>
             <div class="card-item">
               <i class="fas fa-book-dead card-icon"></i>
               <h3 class="text-danger my-3">Total Deaths</h3>
-              <h3 class="text-danger">5460</h3>
+              <h3 id="total-death" class="text-danger">00</h3>
             </div>
             <div class="card-item">
               <i class="fas fa-skull-crossbones card-icon"></i>
               <h3 class="text-danger my-3">Today's Deaths</h3>
-              <h3 class="text-danger">5460</h3>
+              <h3 id="today-death" class="text-danger">00</h3>
             </div>
             <div class="card-item">
               <i class="fas fa-user-plus card-icon"></i>
               <h3 class="text-danger my-3">Total Recovery</h3>
-              <h3 class="text-danger">5460</h3>
+              <h3 id="total-recovery" class="text-danger">00</h3>
             </div>
             <div class="card-item">
               <i class="fas fa-plus-circle card-icon"></i>
               <h3 class="text-danger my-3">Today's Recovery</h3>
-              <h3 class="text-danger">5460</h3>
+              <h3 id="today-recovery" class="text-danger">00</h3>
             </div>
             <div class="card-item">
               <i class="fas fa-exclamation-triangle card-icon"></i>
               <h3 class="text-danger my-3">Critical Cases</h3>
-              <h3 class="text-danger">5460</h3>
+              <h3 id="critical-cases" class="text-danger">00</h3>
             </div>
             <div class="card-item">
               <i class="fas fa-vials card-icon"></i>
               <h3 class="text-danger my-3">Total Tests</h3>
-              <h3 class="text-danger">5460</h3>
+              <h3 id="total-test" class="text-danger">00</h3>
             </div>
           </div>
         </div>
