@@ -22,7 +22,7 @@ const loadCovidData = () => {
 
 const displayWeatherData = (data) => {
   console.log(data);
-  if (data.message == "city not found") {
+  if (data.message == "Country not found or doesn't have any cases") {
     document.getElementById('error-message').style.display = 'block';
     document.getElementById('main-display').style.display = 'none';
     input.value = "";
