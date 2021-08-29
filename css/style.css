@@ -1,0 +1,22 @@
+#flag {
+  width: 70px;
+  margin-left: 10px;
+}
+
+.card-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-item {
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 10px 10px;
+  padding: 30px 20px;
+  border-radius: 20px;
+}
+
+.card-icon {
+  width: 50px;
+  color: #E13545;
+  font-size: 50px;
+}
